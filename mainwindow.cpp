@@ -51,6 +51,8 @@ void MainWindow::connectedToServer()
 
     qDebug() << "Connected UI...";
 
+    ui->label_ServerStatus->setText("Connected!");
+
     // Hey server, tell me about you.
     //socket->write("HEAD / HTTP/1.0\r\n\r\n\r\n\r\n");
 

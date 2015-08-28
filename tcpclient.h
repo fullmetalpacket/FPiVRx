@@ -16,6 +16,9 @@ class TcpClient : public QObject
         explicit TcpClient(QObject *parent = 0);
         void doConnect(QString host, quint16 port);
         bool writeData(QByteArray data);
+        bool validateIpAddress(QString ipAddress);
+        QString stateToString(QAbstractSocket::SocketState socketState);
+        QString errorToString(QAbstractSocket::SocketError socketError);
         QByteArray IntToArray(qint32 source);
 
     signals:
@@ -23,6 +26,8 @@ class TcpClient : public QObject
 
     public slots:
         void connected();
+        void displayError(QAbstractSocket::SocketError socketError);
+        void displayState(QAbstractSocket::SocketState socketState);
         void disconnected();
         void bytesWritten(qint64 bytes);
         void readyRead();

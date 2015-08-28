@@ -1333,6 +1333,19 @@
       <string>Server IP</string>
      </property>
     </widget>
+    <widget class="QLabel" name="label_ServerStatus">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Status:</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>

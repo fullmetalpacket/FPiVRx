@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 
 
     //MyTCPServer server;
-    //MyTCPClient client;rwartest
+    //MyTCPClient client;rwartestdsadasdasd
 
     //Listen connection requests coming from any IP to port 5001
 //    if(!server.listen(QHostAddress::Any,5001))

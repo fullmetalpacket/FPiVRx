@@ -17,39 +17,38 @@ class MainWindow;
 
 class MainWindow : public QMainWindow
 {
+
     Q_OBJECT
 
-public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
-    void defaultValues();
-    void log(QString where, QString data);
-    bool runLocalCommand(QString command);
-    bool killLocalCommand();
-    bool checkIfProcessIsRunning(QString process);
-    QString generateRemoteGStreamerCommand();
-    QString generateLocalGStreamerCommand();
-    QLineEdit lineEdit_ServerIp;
-    QSpinBox spinBox_ServerPort;
+    public:
+        explicit MainWindow(QWidget *parent = 0);
+        ~MainWindow();
+        void defaultValues();
+        void log(QString where, QString data);
+        bool runLocalCommand(QString command);
+        bool killLocalCommand();
+        bool checkIfProcessIsRunning(QString process);
+        QString generateRemoteGStreamerCommand();
+        QString generateLocalGStreamerCommand();
+        QLineEdit lineEdit_ServerIp;
+        QSpinBox spinBox_ServerPort;
+        TcpClient s;
 
-    TcpClient s;
+    public slots:
+        void connectedToServer();
 
-public slots:
+    private slots:
+        void on_pushButton_Mute_clicked();
+        void on_pushButton_Connect_clicked();
+        void on_pushButton_Disconnect_clicked();
+        void on_pushButton_Shutdown_clicked();
+        void on_pushButton_StartStreaming_clicked();
+        void on_pushButton_StopStreaming_clicked();
 
-    void connectedToServer();
-
-private slots:
-    void on_pushButton_Mute_clicked();
-    void on_pushButton_Connect_clicked();
-    void on_pushButton_Disconnect_clicked();
-    void on_pushButton_Shutdown_clicked();
-    void on_pushButton_StartStreaming_clicked();
-    void on_pushButton_StopStreaming_clicked();
-
-private:
-    Ui::MainWindow *ui;
-    QMediaPlayer livePlayer;
-    QMediaPlayer recordingPlayer;
+    private:
+        Ui::MainWindow *ui;
+        QMediaPlayer livePlayer;
+        QMediaPlayer recordingPlayer;
 
 };
 

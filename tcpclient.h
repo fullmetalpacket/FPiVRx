@@ -9,30 +9,27 @@
 
 class TcpClient : public QObject
 {
+
     Q_OBJECT
-public:
-    explicit TcpClient(QObject *parent = 0);
 
-    void doConnect(QString host, quint16 port);
-    bool writeData(QByteArray data);
-    QByteArray IntToArray(qint32 source);
+    public:
+        explicit TcpClient(QObject *parent = 0);
+        void doConnect(QString host, quint16 port);
+        bool writeData(QByteArray data);
+        QByteArray IntToArray(qint32 source);
 
-TcpClient s;
-
-signals:
+    signals:
 
 
-public slots:
-    void connected();
-    void disconnected();
-    void bytesWritten(qint64 bytes);
-    void readyRead();
+    public slots:
+        void connected();
+        void disconnected();
+        void bytesWritten(qint64 bytes);
+        void readyRead();
 
+    private:
+        QTcpSocket *socket;
 
-private:
-    QTcpSocket *socket;
-    //Ui::MainWindow *ui;
 };
 
 #endif // TCPCLIENT
-

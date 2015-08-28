@@ -7,14 +7,6 @@
 #include <QtNetwork>
 #include <QTcpSocket>
 #include <QAbstractSocket>
-//#include <QUrl>
-//#include <QMediaPlaylist>
-//#include <QWidget>
-//#include <QMediaObject>
-//#include <QtMultimedia>
-//#include <QGraphicsView>
-//#include <QGraphicsVideoItem>
-//#include <QBoxLayout>
 #include <QDebug>
 
 
@@ -56,6 +48,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::connectedToServer()
 {
+
     qDebug() << "Connected UI...";
 
     // Hey server, tell me about you.

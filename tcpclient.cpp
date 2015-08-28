@@ -33,20 +33,20 @@ void TcpClient::doConnect(QString host, quint16 port)
     }
 }
 
-//void TcpClient::connected()
-//{
-//    qDebug() << "Connected...";
+void TcpClient::connected()
+{
+    qDebug() << "Connected...";
 
-//    // Hey server, tell me about you.
-//    //socket->write("HEAD / HTTP/1.0\r\n\r\n\r\n\r\n");
+    // Hey server, tell me about you.
+    //socket->write("HEAD / HTTP/1.0\r\n\r\n\r\n\r\n");
 
-//    //ui->pushButton_Disconnect->setEnabled(true);
-//    //ui->pushButton_Connect->setEnabled(false);
+    //ui->pushButton_Disconnect->setEnabled(true);
+    //ui->pushButton_Connect->setEnabled(false);
 
 
-//    //ui.findChild<QPushButton*>("pushButton_Connect")->setEnabled(false);
+    //ui.findChild<QPushButton*>("pushButton_Connect")->setEnabled(false);
 
-//}
+}
 
 bool TcpClient::writeData(QByteArray data)
 {
@@ -64,12 +64,6 @@ bool TcpClient::writeData(QByteArray data)
 void TcpClient::disconnected()
 {
     qDebug() << "disconnected...";
-
-
-
-
-
-
 }
 
 void TcpClient::bytesWritten(qint64 bytes)

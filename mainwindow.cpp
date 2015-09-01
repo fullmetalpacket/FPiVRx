@@ -1,6 +1,3 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include "tcpclient.h"
 #include <QMediaPlayer>
 #include <QVideoWidget>
 #include <QtWidgets>
@@ -8,7 +5,7 @@
 #include <QTcpSocket>
 #include <QAbstractSocket>
 #include <QDebug>
-
+#include "mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -36,8 +33,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     recordingPlayer->pause();
 
-
-
 }
 
 MainWindow::~MainWindow()
@@ -51,7 +46,7 @@ void MainWindow::connectedToServer()
 
     qDebug() << "Connected UI...";
 
-    ui->label_ServerStatus->setText("Connected!");
+    //ui->label_ServerStatus->setText("Connected!");
 
     // Hey server, tell me about you.
     //socket->write("HEAD / HTTP/1.0\r\n\r\n\r\n\r\n");

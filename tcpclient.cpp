@@ -1,12 +1,10 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include "tcpclient.h"
 #include <QtWidgets>
 #include <QtNetwork>
 #include <QTcpSocket>
 #include <QAbstractSocket>
 #include <QMessageBox>
 #include <QDebug>
+#include "tcpclient.h"
 
 TcpClient::TcpClient(QObject *parent) : QObject(parent)
 {
@@ -17,12 +15,12 @@ void TcpClient::doConnect(QString host, quint16 port)
 {
 
     //MainWindow *ui = new MainWindow;
-    MainWindow *ui = new MainWindow();
+    //MainWindow *ui = new MainWindow();
 
     socket = new QTcpSocket(this);
 
-    connect(socket, SIGNAL(connected()), ui, SLOT(connectedToServer()));
-    //connect(socket, SIGNAL(connected()), this, SLOT(connected()));
+    //connect(socket, SIGNAL(connected()), ui, SLOT(connectedToServer()));
+    connect(socket, SIGNAL(connected()), this, SLOT(connected()));
     connect(socket, SIGNAL(disconnected()), this, SLOT(disconnected()));
     connect(socket, SIGNAL(bytesWritten(qint64)), this, SLOT(bytesWritten(qint64)));
     connect(socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
@@ -74,20 +72,21 @@ bool TcpClient::validateIpAddress(QString ipAddress)
     }
 }
 
-void TcpClient::connected()
-{
-    qDebug() << "Connected...";
-
-    // Hey server, tell me about you.
-    //socket->write("HEAD / HTTP/1.0\r\n\r\n\r\n\r\n");
-
-    //ui->pushButton_Disconnect->setEnabled(true);
-    //ui->pushButton_Connect->setEnabled(false);
+//void TcpClient::connected()
+//{
+//    qDebug() << "Connected...";
 
 
-    //ui.findChild<QPushButton*>("pushButton_Connect")->setEnabled(false);
+//    // Hey server, tell me about you.
+//    //socket->write("HEAD / HTTP/1.0\r\n\r\n\r\n\r\n");
 
-}
+//    //ui->pushButton_Disconnect->setEnabled(true);
+//    //ui->pushButton_Connect->setEnabled(false);
+
+
+//    //ui.findChild<QPushButton*>("pushButton_Connect")->setEnabled(false);
+
+//}
 
 void TcpClient::displayError(QAbstractSocket::SocketError socketError)
 {

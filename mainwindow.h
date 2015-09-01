@@ -1,7 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "tcpclient.h"
 #include <QMainWindow>
 #include <QLineEdit>
 #include <QMediaPlayer>

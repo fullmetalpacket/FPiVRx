@@ -1,7 +1,6 @@
 #ifndef TCPCLIENT
 #define TCPCLIENT
 
-
 #include <QObject>
 #include <QTcpSocket>
 #include <QAbstractSocket>
@@ -25,12 +24,12 @@ class TcpClient : public QObject
 
 
     public slots:
-        void connected();
-        void displayError(QAbstractSocket::SocketError socketError);
-        void displayState(QAbstractSocket::SocketState socketState);
+//        void connected();
         void disconnected();
         void bytesWritten(qint64 bytes);
         void readyRead();
+        void displayError(QAbstractSocket::SocketError socketError);
+        void displayState(QAbstractSocket::SocketState socketState);
 
     private:
         QTcpSocket *socket;

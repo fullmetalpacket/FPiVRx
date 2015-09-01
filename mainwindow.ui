@@ -1336,9 +1336,9 @@
     <widget class="QLabel" name="label_ServerStatus">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>50</x>
        <y>100</y>
-       <width>71</width>
+       <width>91</width>
        <height>16</height>
       </rect>
      </property>

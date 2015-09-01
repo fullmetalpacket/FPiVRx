@@ -9,9 +9,12 @@
 #include <QTcpSocket>
 #include <QAbstractSocket>
 #include <QProcess>
+#include "ui_mainwindow.h"
+#include "tcpclient.h"
 
-namespace Ui {
-class MainWindow;
+namespace Ui
+{
+    class MainWindow;
 }
 
 class MainWindow : public QMainWindow
